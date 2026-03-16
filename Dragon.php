@@ -2,10 +2,10 @@
 
 class Dragon extends Pokemon
 {
-    private $vida;
-    private $vida_actual;
-    private $vida_ataque;
-    private $elemento;
+    protected $vida;
+    protected $vida_actual;
+    protected $vida_ataque;
+    protected $elemento;
     public function __construct ($nombre, $tipo, $ataque, $elemento){
         parent::__construct($nombre, $tipo, $ataque);
         $this->vida = rand(100, 200);

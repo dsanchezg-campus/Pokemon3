@@ -1,9 +1,9 @@
 <?php
 class Pokemon {
-    private $nombre;
-    private $tipo;
-    private $ataque;
-    private $nivel;
+    protected $nombre;
+    protected $tipo;
+    protected $ataque;
+    protected $nivel;
 
 
     public function __construct($nombre, $tipo, $ataque){
