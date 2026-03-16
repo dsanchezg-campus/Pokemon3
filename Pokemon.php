@@ -6,6 +6,7 @@ class Pokemon {
     private $ataque;
     private $nivel;
     private $vida;
+    private $vida_actual;
     private $vida_ataque;
 
     public function __construct($nombre, $elemento, $tipo, $ataque){
@@ -15,6 +16,7 @@ class Pokemon {
         $this->ataque = $ataque;
         $this->nivel = rand(1,100);
         $this->vida = rand(1,255);
+        $this->vida_actual = $this->vida;
         $this->vida_ataque=rand(1,255);
     }
 
@@ -28,9 +30,6 @@ class Pokemon {
 
     public function getDanio(){
         return $this->vida_ataque;
-    }
-    public function Atacar(){
-        return $this->nombre . " ataca con " . $this->ataque . " y causa daño.";
     }
     
 
