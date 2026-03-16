@@ -3,6 +3,8 @@
 class electrico extends Pokemon
 {
     public function __construct ($nombre, $tipo, $ataque){
+        parent::__construct($nombre, $tipo, $ataque);
+
         $this->nombre = $nombre;
         $this->elemento = "electrico";
         $this->tipo = $tipo;
