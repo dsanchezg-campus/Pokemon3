@@ -118,5 +118,9 @@ if (isset($_POST["vaciar"])) {
             <a href="fight.php">Ir a pelear</a>
         </p>
 </section>
+    <?php
+    $img = rand(1, 10);
+    echo '<img src="' . $img . '.png" alt="Imagen aleatoria ' . $img . '"class="imgPokemon">';
+    ?>
 </body>
 </html>
