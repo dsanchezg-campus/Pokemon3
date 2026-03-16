@@ -54,17 +54,18 @@ session_start();
     </section>
 
     <section>
-        <h2>Pokémon creados</h2>
+        <h2>Pokémon Existentes</h2>
+    </section>
         <?php
         if (count($_SESSION["pokemons"]) > 0) {
             foreach ($_SESSION["pokemons"] as $pokemon) {
-                echo "<p>" . $pokemon->mostrarInfo() . "</p>";
+                echo "<section><p>" . $pokemon->mostrarInfo() . "</p></section>";
             }
         } else {
             echo "<p>No hay Pokémon creados todavía</p>";
         }
         ?>
-    </section>
+
 <section>
     <p>
     <a href="gestion.php">Ir a gestión</a>

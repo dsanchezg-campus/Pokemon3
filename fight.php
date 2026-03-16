@@ -25,7 +25,7 @@ if (!isset($_SESSION["entrenadoras"])) {
 
     <form method="POST" action="">
         <section>
-            <h3>Selecciona primero Entrenadora</h3>
+            <h3>Selecciona 1º Entrenadora</h3>
             <select name="entre1">
                <?php
                 foreach ($_SESSION["entrenadoras"] as $identrenadoras => $entrenadora) {
@@ -33,10 +33,8 @@ if (!isset($_SESSION["entrenadoras"])) {
                 }
                 ?>
             </select>
-        </section>
 
-        <section>
-            <h3>Selecciona segundo Entrenadora</h3>
+            <h3>Selecciona 2º Entrenadora</h3>
             <select name="entre2">
                 <?php
                 foreach ($_SESSION["entrenadoras"] as $identrenadoras => $entrenadora) {
@@ -44,14 +42,17 @@ if (!isset($_SESSION["entrenadoras"])) {
                 }
                 ?>
             </select>
-            <p>
-        <button type="submit">Enviar</button>
-        </p>
+
         </section>
+                <section>
+
+        <button type="submit">Enviar</button>
+
+            </section>
 
     </form>
 
-    <section>
+
     <?php
     if(isset($_POST['entre1'],$_POST['entre2'])){
         $n_entrenadora1=$_POST['entre1'];
@@ -70,9 +71,7 @@ if (!isset($_SESSION["entrenadoras"])) {
                 }
 
             echo"</select>
-            </section>
-
-            <section class='pokemon'>
+            
             <h3>Selecciona pokemon de ".$entrenadora2->MostrarInfo()."</h3>
                 <select name='pokemon2'>";
 
@@ -81,10 +80,10 @@ if (!isset($_SESSION["entrenadoras"])) {
                 }
 
             echo "</select>
-            <p>
-                <button type='submit'>Enviar</button>
-            </p>
+            
+            
             </section>
+                <section><button type='submit'>Pelear</button></section>
             </form>";
         }else{
             echo "<script>alert('No puedes elegir dos entrenadora mismo')</script>";
@@ -108,18 +107,19 @@ if (!isset($_SESSION["entrenadoras"])) {
         echo "<p>Pokemon 2 queda " . $pokemon2->getVida() . "</p>";
         }else{
             if($pokemon1->getVida() > $pokemon2->getVida()){
-                echo "pokemon1 ganado";
+                echo "<section><h1>Pokemon ganador 1º</h1></section>";
             }elseif($pokemon1->getVida()==$pokemon2->getVida()){
-                echo "no hay pokemon gana, todos 0";
+                echo "<section><h1>Empate</h1></section>";
             }else{
-                echo "pokemon2 ganado";
+                echo "<section><h1>Pokemon ganador 2º</h1></section>";
             }
         }
     }
-
+    echo "";
     
     ?>
 
+<section>
     <a href="crearpokemon.php">Crear Pokemon</a>
     <a href="crearentrenadora.php">Crear Entrenadora</a>
         <p>
