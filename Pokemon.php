@@ -41,11 +41,9 @@ class Pokemon {
     public function MostrarInfo(){
     return 
         "<p>Nombre: " . $this->nombre . "</p>" .
-        "<p>Elemento: " . $this->elemento . "</p>" .
         "<p>Tipo: " . $this->tipo . "</p>" .
         "<p>Ataque: " . $this->ataque . "</p>" .
-        "<p>Nivel: " . $this->nivel . "</p>" .
-        "<p>Vida: " . $this->vida . "</p>";
+        "<p>Nivel: " . $this->nivel . "</p>";
     }
 
 }
