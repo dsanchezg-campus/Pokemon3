@@ -61,6 +61,9 @@ if(!empty($_POST['nombre'])){
     <section>
         <a href="crearpokemon.php">Crear Pokemon</a>
         <a href="gestion.php">Ir a gestion</a>
+        <p>
+            <a href="fight.php">Ir a pelear</a>
+        </p>
     </section>
 </body>
 </html>

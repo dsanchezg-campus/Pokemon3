@@ -114,6 +114,9 @@ if (isset($_POST["vaciar"])) {
 
     <a href="crearpokemon.php">Crear Pokemon</a>
     <a href="crearentrenadora.php">Crear Entrenadora</a>
+        <p>
+            <a href="fight.php">Ir a pelear</a>
+        </p>
 </section>
 </body>
 </html>
