@@ -5,7 +5,6 @@ class Electrico extends Pokemon
     public function __construct ($nombre, $tipo, $ataque){
         parent::__construct($nombre, $tipo, $ataque);
         $this->elemento = "electrico";
-        $this->nivel = 1;
         $this->vida = rand(70,160);
         $this->vida_actual = $this->vida;
         $this->vida_ataque= rand(150, 300);
