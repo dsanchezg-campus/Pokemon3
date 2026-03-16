@@ -18,10 +18,14 @@ session_start();
         <label for="nombre"><p>Nombre</p></label>
         <input type="text" name="nombre">
         <label for="elemento"><p>Elemento</p></label>
-        <input type="text" name="elemento">
+            <select name="elemento" id="elemento">
+                <option value="dragon">Dragon</option>
+                <option value="hada">Hada</option>
+                <option value="electrico">Electrico</option>
+            </select>
         <label for="tipo"><p>Tipo</p></label>
         <input type="text" name="tipo">
-        <label for="ataque"><p>Nombre Ataque</p></label>
+        <label for="ataque"><p>Ataque</p></label>
         <input type="text" name="ataque"><p></p>
         <input type="submit" value="crear">
         </form>
@@ -34,13 +38,23 @@ session_start();
         $_SESSION["pokemons"]=[];
     }
 
-    if(isset($_POST["nombre"], $_POST["elemento"],$_POST["tipo"], $_POST["ataque"])){
+    if(isset($_POST["nombre"], ($_POST["elemento"]),($_POST["tipo"]),($_POST["ataque"]))){
         $nombre = $_POST["nombre"];
         $elemento = $_POST["elemento"];
         $tipo = $_POST["tipo"];
         $ataque = $_POST["ataque"];
-
-        $pokemon = new Pokemon($nombre, $elemento, $tipo, $ataque);
+    switch ($tipo) {
+        case "dragon":
+            $pokemon = new Dragon($nombre,$tipo, $ataque);
+            break;
+        case "hada":
+            $pokemon = new Hada($nombre,$tipo, $ataque);
+            break;
+        case "electrico":
+            $pokemon = new Electrico($nombre,$tipo, $ataque);
+            break;
+    }
+        $pokemon = new Pokemon($nombre,$tipo, $ataque);
         $_SESSION["pokemons"][]=$pokemon;
 
         $mensaje= "Pokemon creado con éxito.";

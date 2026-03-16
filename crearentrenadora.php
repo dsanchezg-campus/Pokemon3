@@ -45,19 +45,20 @@ session_start();
     </section>
     
      <section>
-        <h2>Entrenadoras creadas</h2>
+        <h2>Entrenadoras Existentes</h2>
+     </section>
         <?php
 if(!empty($_POST['nombre'])){
         if (count($_SESSION["entrenadoras"]) > 0 ) {
             foreach ($_SESSION["entrenadoras"] as $entrenadora) {
-                echo "<p>" . $entrenadora->mostrarInfo() . "</p>";
+                echo "<section><p>" . $entrenadora->mostrarInfo() . "</p></section>";
             }
         } else {
-            echo "<p>No hay entrenadoras creadas todavía</p>";
+            echo "<section><p>No hay entrenadoras creadas todavía</p></section>";
         }
         }
         ?>
-    </section>
+
     <section>
         <a href="crearpokemon.php">Crear Pokemon</a>
         <a href="gestion.php">Ir a gestion</a>
