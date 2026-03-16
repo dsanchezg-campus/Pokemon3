@@ -2,15 +2,16 @@
 
 class Hada extends Pokemon
 {
-    public function __construct ($nombre, $tipo, $ataque){
-        $this->nombre = $nombre;
-        $this->elemento = "hada";
-        $this->tipo = $tipo;
-        $this->ataque = $ataque;
-        $this->nivel = 1;
-        $this->vida = rand(80, 150);
+    private $vida;
+    private $vida_actual;
+    private $vida_ataque;
+    private $elemento;
+    public function __construct ($nombre, $tipo, $ataque, $elemento){
+        parent::__construct($nombre, $tipo, $ataque);
+        $this->vida = rand(80, 160);
         $this->vida_actual = $this->vida;
         $this->vida_ataque= rand(75, 125);
+        $this->elemento = $elemento;
     }
 
     public function Atacar($pokemon) : string {

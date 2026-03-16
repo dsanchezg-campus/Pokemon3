@@ -1,17 +1,13 @@
 <?php
 class Pokemon {
     private $nombre;
-    private $elemento;
     private $tipo;
     private $ataque;
     private $nivel;
-    private $vida;
-    private $vida_actual;
-    private $vida_ataque;
 
-    public function __construct($nombre, $elemento, $tipo, $ataque){
+
+    public function __construct($nombre, $tipo, $ataque){
         $this->nombre = $nombre;
-        $this->elemento = $elemento;
         $this->tipo = $tipo;
         $this->ataque = $ataque;
         $this->nivel = rand(1,100);

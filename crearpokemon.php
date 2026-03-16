@@ -21,7 +21,7 @@ session_start();
         <input type="text" name="elemento">
         <label for="tipo"><p>Tipo</p></label>
         <input type="text" name="tipo">
-        <label for="ataque"><p>Ataque</p></label>
+        <label for="ataque"><p>Nombre Ataque</p></label>
         <input type="text" name="ataque"><p></p>
         <input type="submit" value="crear">
         </form>
@@ -34,7 +34,7 @@ session_start();
         $_SESSION["pokemons"]=[];
     }
 
-    if(isset($_POST["nombre"], ($_POST["elemento"]),($_POST["tipo"]),($_POST["ataque"]))){
+    if(isset($_POST["nombre"], $_POST["elemento"],$_POST["tipo"], $_POST["ataque"])){
         $nombre = $_POST["nombre"];
         $elemento = $_POST["elemento"];
         $tipo = $_POST["tipo"];
@@ -54,17 +54,18 @@ session_start();
     </section>
 
     <section>
-        <h2>Pokémon creados</h2>
+        <h2>Pokémon Existentes</h2>
+    </section>
         <?php
         if (count($_SESSION["pokemons"]) > 0) {
             foreach ($_SESSION["pokemons"] as $pokemon) {
-                echo "<p>" . $pokemon->mostrarInfo() . "</p>";
+                echo "<section><p>" . $pokemon->mostrarInfo() . "</p></section>";
             }
         } else {
             echo "<p>No hay Pokémon creados todavía</p>";
         }
         ?>
-    </section>
+
 <section>
     <p>
     <a href="gestion.php">Ir a gestión</a>
