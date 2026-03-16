@@ -21,7 +21,7 @@ session_start();
         <input type="text" name="elemento">
         <label for="tipo"><p>Tipo</p></label>
         <input type="text" name="tipo">
-        <label for="ataque"><p>Ataque</p></label>
+        <label for="ataque"><p>Nombre Ataque</p></label>
         <input type="text" name="ataque"><p></p>
         <input type="submit" value="crear">
         </form>
@@ -34,7 +34,7 @@ session_start();
         $_SESSION["pokemons"]=[];
     }
 
-    if(isset($_POST["nombre"], ($_POST["elemento"]),($_POST["tipo"]),($_POST["ataque"]))){
+    if(isset($_POST["nombre"], $_POST["elemento"],$_POST["tipo"], $_POST["ataque"])){
         $nombre = $_POST["nombre"];
         $elemento = $_POST["elemento"];
         $tipo = $_POST["tipo"];
