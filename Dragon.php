@@ -14,7 +14,7 @@ class Dragon extends Pokemon
     }
 
     public function Atacar($pokemon) : string{
-        $pokemon->vida -= $this->vida_ataque*2;
+        $pokemon->vida -= $this->vida_ataque*1.5;
         return $this->getNombre(). " ha atacado a ". $pokemon->getNombre(). " haciendo ". $this->vida_ataque. " de daño";
     }
 
