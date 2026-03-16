@@ -100,18 +100,16 @@ if (!isset($_SESSION["entrenadoras"])) {
         $ataque_vida2=$pokemon2->getDanio();
         $vida_pokemon2=$pokemon2->getVida();
         //start
-        if($pokemon1 -> getVida() > 0 && $pokemon2 -> getVida() > 0){
-        $pokemon1->restaVida($ataque_vida2);
-        $pokemon2->restaVida($ataque_vida1);
-        echo "<p>Pokemon 1 queda " . $pokemon1->getVida() . "</p>"; 
-        echo "<p>Pokemon 2 queda " . $pokemon2->getVida() . "</p>";
+        if($pokemon1 -> getVida_actual() > 0 && $pokemon2 -> getVida_actual() > 0){
+            echo "<p>".$pokemon1->Atacar($pokemon2)."</p>";
+            echo "<p>".$pokemon2->Atacar($pokemon2)."</p>";
         }else{
-            if($pokemon1->getVida() > $pokemon2->getVida()){
-                echo "<section><h1>Pokemon ganador 1º</h1></section>";
-            }elseif($pokemon1->getVida()==$pokemon2->getVida()){
+            if($pokemon1->getVida_actual() > $pokemon2->getVida_actual()){
+                echo "<section><h1>$pokemon1->getNombre gana</h1></section>";
+            }elseif($pokemon1->getVida_actual() <= 0 && $pokemon2->getVida_actual() <= 0){
                 echo "<section><h1>Empate</h1></section>";
             }else{
-                echo "<section><h1>Pokemon ganador 2º</h1></section>";
+                echo "<section><h1>$pokemon->getNombre gana</h1></section>";
             }
         }
     }

@@ -5,9 +5,9 @@ class Hada extends Pokemon
 
     public function __construct ($nombre, $tipo, $ataque, $elemento){
         parent::__construct($nombre, $tipo, $ataque);
-        $this->vida = rand(80, 160);
+        $this->vida = rand(100, 160);
         $this->vida_actual = $this->vida;
-        $this->vida_ataque= rand(75, 125);
+        $this->vida_ataque= rand(50, 75);
         $this->elemento = $elemento;
     }
 

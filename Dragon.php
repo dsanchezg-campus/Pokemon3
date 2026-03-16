@@ -6,7 +6,7 @@ class Dragon extends Pokemon
         parent::__construct($nombre, $tipo, $ataque);
         $this->vida = rand(100, 200);
         $this->vida_actual = $this->vida;
-        $this->vida_ataque= rand(50, 100);
+        $this->vida_ataque= rand(25, 50);
         $this->elemento = $elemento;
     }
 

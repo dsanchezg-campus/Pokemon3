@@ -17,10 +17,6 @@ class Pokemon {
         $this->nivel = 1;
     }
 
-    public function restaVida($danio){
-        $this->vida=$this->vida - $danio;
-        return $this->vida;
-    }
     public function getNombre() {
         return $this->nombre;
     }
@@ -37,6 +33,9 @@ class Pokemon {
 
     public function getVida(){
         return $this->vida;
+    }
+    public function getVida_actual(){
+        return $this->vida_actual;
     }
 
     public function MostrarInfo(){

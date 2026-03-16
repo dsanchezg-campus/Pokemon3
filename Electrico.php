@@ -7,7 +7,7 @@ class Electrico extends Pokemon
         $this->elemento = "electrico";
         $this->vida = rand(70,160);
         $this->vida_actual = $this->vida;
-        $this->vida_ataque= rand(150, 300);
+        $this->vida_ataque= rand(100, 170);
     }
 
     public function Atacar($pokemon) : string {
